@@ -16,9 +16,9 @@ public class AdminController {
     AdminService adminService;
 
     @PostMapping("/passCoordinates")
-    private ResponseEntity<?> passCoordinates(@RequestBody List<Coordinates> adminParameters){
-        adminService.saveCoordinates(adminParameters);
-        return ResponseEntity.ok("Parameters uploaded");
+    private String passCoordinates(@RequestBody List<Coordinates> adminParameters){
+
+        return adminService.saveCoordinates(adminParameters);
     }
 
     @GetMapping("/getCoordinates/{id}")

@@ -7,7 +7,7 @@ import java.awt.*;
 import java.util.List;
 
 public interface AdminService {
-    void saveCoordinates (List<Coordinates> adminParameters);
+    String saveCoordinates (List<Coordinates> adminParameters);
 
     SiteLocation getCoordinates(String id);
 }

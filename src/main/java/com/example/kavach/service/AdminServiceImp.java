@@ -15,10 +15,11 @@ public class AdminServiceImp implements AdminService {
     AdminRepository adminRepository;
 
     @Override
-    public void saveCoordinates (List<Coordinates> adminParameters) {
+    public String saveCoordinates (List<Coordinates> adminParameters) {
         SiteLocation temp = new SiteLocation();
         temp.setCoordinatesList(adminParameters);
         adminRepository.save(temp);
+        return temp.getId();
         
     }
 
