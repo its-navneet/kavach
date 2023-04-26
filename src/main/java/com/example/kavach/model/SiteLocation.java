@@ -10,15 +10,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @Setter
 @NoArgsConstructor
-public class SiteLocation {
-
-    @NotBlank
+public class SiteLocation{
     String id;
 
     @NotBlank
     Float latitude;
 
+    @NotBlank
     Float longitude;
-
-    Float radius;
 }
