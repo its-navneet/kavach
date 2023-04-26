@@ -21,4 +21,9 @@ public class AdminServiceImp implements AdminService {
         adminRepository.save(temp);
         
     }
+
+    @Override
+    public SiteLocation getCoordinates(String id) {
+        return adminRepository.findById(id).get();
+    }
 }

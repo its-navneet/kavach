@@ -21,13 +21,8 @@ public class AdminController {
         return ResponseEntity.ok("Parameters uploaded");
     }
 
-//    @GetMapping("/getCenteroidCoordinates")
-//    private SiteLocation getCenteroidCoordinates(){
-//        return adminService.getCoordinates();
-//    }
-
-//    @PostMapping("/passSelectedPersonnels")
-//    private ResponseEntity<?> passSelectedPersonnels(List<Personnel> personnelList){
-//
-//    }
+    @GetMapping("/getCoordinates/{id}")
+    private SiteLocation getCoordinates(@PathVariable String id){
+        return adminService.getCoordinates(id);
+    }
 }
