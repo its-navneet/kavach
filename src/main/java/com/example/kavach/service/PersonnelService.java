@@ -5,7 +5,7 @@ import com.example.kavach.model.Personnel;
 import java.util.List;
 
 public interface PersonnelService {
-    void addPersonnel(Personnel personnel);
+    String addPersonnel(Personnel personnel);
 
     List<Personnel> findPersonnelByName(String name);
 

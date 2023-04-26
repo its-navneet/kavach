@@ -18,11 +18,12 @@ public class PersonnelServiceImpl implements PersonnelService {
     PersonnelRepository personnelRepository;
 
     @Override
-    public void addPersonnel (Personnel personnel) {
+    public String addPersonnel (Personnel personnel) {
         personnel.setJoining(LocalDateTime.now());
         if(!personnelRepository.existsByEmail(personnel.getEmail()) && !personnelRepository.existsByPhone(personnel.getPhone())) {
             personnelRepository.save(personnel);
         }
+        return personnel.id;
     }
 
     @Override

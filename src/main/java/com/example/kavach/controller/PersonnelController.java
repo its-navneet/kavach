@@ -18,9 +18,8 @@ public class PersonnelController {
     private PersonnelService personnelService;
 
     @PostMapping("/addPersonnel")
-    public ResponseEntity<?> addPersonnel (@RequestBody Personnel personnel) {
-        personnelService.addPersonnel(personnel);
-        return ResponseEntity.ok("Personnel registered successfully!");
+    public String addPersonnel (@RequestBody Personnel personnel) {
+        return personnelService.addPersonnel(personnel);
     }
 
     @GetMapping("findAll/{position}")
