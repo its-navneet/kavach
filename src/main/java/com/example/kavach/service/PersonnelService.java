@@ -10,4 +10,7 @@ public interface PersonnelService {
     List<Personnel> findPersonnelByName(String name);
 
     List<Personnel> findPersonnelByPosAndAvl (String position);
+
+    List<Personnel> findPersonnelByPosition (String position);
+
 }

@@ -40,4 +40,10 @@ public class PersonnelServiceImpl implements PersonnelService {
         }
         return availablePersonnel;
     }
+
+    @Override
+    public List<Personnel> findPersonnelByPosition (String position) {
+        return personnelRepository.findByPosition(position);
+    }
+
 }

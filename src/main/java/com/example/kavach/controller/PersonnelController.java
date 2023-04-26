@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/api")
 public class PersonnelController {
 
@@ -25,6 +24,11 @@ public class PersonnelController {
         return ResponseEntity.ok("Personnel registered successfully!");
     }
 
+    @GetMapping("findAll/{position}")
+    public List<Personnel> findPersonnelByPos(@PathVariable String position){
+        return personnelService.findPersonnelByPosition(position);
+    }
+
     @GetMapping("find/{name}")
     public List<Personnel> findPersonnelByName(@PathVariable String name){
         return personnelService.findPersonnelByName(name);
@@ -34,6 +38,4 @@ public class PersonnelController {
     public List<Personnel> findPersonnelByPosAndAvl(@PathVariable String position){
         return personnelService.findPersonnelByPosAndAvl(position);
     }
-
-
 }
