@@ -1,5 +1,6 @@
 package com.example.kavach.model;
 
+
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,15 +8,16 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
-
-@Document(collection = "admin_input")
+@Document(collection = "coordinates")
 @Getter
 @Setter
 @NoArgsConstructor
-public class SiteLocation{
-    @Id
-    String id;
+public class Coordinates {
 
-    List<Coordinates> coordinatesList;
+    @NotBlank
+    Float latitude;
+
+    @NotBlank
+    Float longitude;
+
 }

@@ -1,4 +1,5 @@
 package com.example.kavach.controller;
+import com.example.kavach.model.Coordinates;
 import com.example.kavach.model.SiteLocation;
 import com.example.kavach.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class AdminController {
     AdminService adminService;
 
     @PostMapping("/passCoordinates")
-    private ResponseEntity<?> passCoordinates(@RequestBody List<SiteLocation> adminParameters){
+    private ResponseEntity<?> passCoordinates(@RequestBody List<Coordinates> adminParameters){
         adminService.saveCoordinates(adminParameters);
         return ResponseEntity.ok("Parameters uploaded");
     }

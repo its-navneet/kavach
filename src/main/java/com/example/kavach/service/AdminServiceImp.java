@@ -1,4 +1,5 @@
 package com.example.kavach.service;
+import com.example.kavach.model.Coordinates;
 import com.example.kavach.model.SiteLocation;
 import com.example.kavach.repository.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,10 @@ public class AdminServiceImp implements AdminService {
     AdminRepository adminRepository;
 
     @Override
-    public void saveCoordinates (List<SiteLocation> adminParameters) {
-        adminRepository.saveAll(adminParameters);
+    public void saveCoordinates (List<Coordinates> adminParameters) {
+        SiteLocation temp = new SiteLocation();
+        temp.setCoordinatesList(adminParameters);
+        adminRepository.save(temp);
+        
     }
 }
