@@ -23,7 +23,7 @@ public class PersonnelServiceImpl implements PersonnelService {
         if(!personnelRepository.existsByEmail(personnel.getEmail()) && !personnelRepository.existsByPhone(personnel.getPhone())) {
             personnelRepository.save(personnel);
         }
-        return "Personnel added successfully";
+        return personnel.id;
     }
 
     @Override
