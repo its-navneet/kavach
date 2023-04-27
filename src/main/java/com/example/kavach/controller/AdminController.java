@@ -16,7 +16,7 @@ public class AdminController {
     AdminService adminService;
 
     @PostMapping("/passCoordinates")
-    private String passCoordinates(@RequestBody List<Coordinates> adminParameters){
+    private String passCoordinates(@RequestBody SiteLocation adminParameters){
 
         return adminService.saveCoordinates(adminParameters);
     }
